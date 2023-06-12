@@ -26,8 +26,12 @@ export const loader =
 
 const Vehicle = () => {
   const { id } = useLoaderData();
-  const { data } = useQuery(singleVehicleQuery(id));
-  return (
+  const { data, isFetching } = useQuery(singleVehicleQuery(id));
+  return isFetching ? (
+    <div className="loader-container">
+      <div className="loading"></div>
+    </div>
+  ) : (
     <section className="box">
       <div className="box-header">
         <h1>{data.name}</h1>

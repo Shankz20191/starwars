@@ -26,8 +26,12 @@ export const loader =
 
 const Starship = () => {
   const { id } = useLoaderData();
-  const { data } = useQuery(singleStarshipQuery(id));
-  return (
+  const { data, isFetching } = useQuery(singleStarshipQuery(id));
+  return isFetching ? (
+    <div className="loader-container">
+      <div className="loading"></div>
+    </div>
+  ) : (
     <section className="box">
       <div className="box-header">
         <h1>{data.name}</h1>

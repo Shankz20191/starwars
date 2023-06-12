@@ -39,9 +39,14 @@ const Search = () => {
   const { searchParam } = useLoaderData();
   const {
     data: { peopleData, planetsData, starshipsData },
+    isFetching,
   } = useQuery(searchQuery(searchParam));
 
-  return (
+  return isFetching ? (
+    <div className="loader-container">
+      <div className="loading"></div>
+    </div>
+  ) : (
     <section className="box">
       <div className="box-header">
         <h1>Search</h1>

@@ -8,8 +8,8 @@ const CharacterComponents = ({ url }) => {
   return (
     <div className="box-component">
       <h3>{data?.name}</h3>
-      <p>{data?.gender}</p>
-      <p>{data?.birth_year}</p>
+      <p>Gender: {data?.gender}</p>
+      <p>Birth Year: {data?.birth_year}</p>
       <Link to={`/people/${id}`} style={{ display: "block" }}>
         <button className="btn">Details..</button>
       </Link>

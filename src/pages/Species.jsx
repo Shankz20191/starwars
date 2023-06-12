@@ -26,9 +26,13 @@ export const loader =
 
 const Species = () => {
   const { id } = useLoaderData();
-  const { data } = useQuery(singleSpeciesQuery(id));
+  const { data, isFetching } = useQuery(singleSpeciesQuery(id));
 
-  return (
+  return isFetching ? (
+    <div className="loader-container">
+      <div className="loading"></div>
+    </div>
+  ) : (
     <section className="box">
       <div className="box-header">
         <h1>{data.name}</h1>

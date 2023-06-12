@@ -28,8 +28,12 @@ export const loader =
 
 const People = () => {
   const { id } = useLoaderData();
-  const { data } = useQuery(singlePeopleQuery(id));
-  return (
+  const { data, isFetching } = useQuery(singlePeopleQuery(id));
+  return isFetching ? (
+    <div className="loader-container">
+      <div className="loading"></div>
+    </div>
+  ) : (
     <section className="box">
       <div className="box-header">
         <h1>{data.name}</h1>

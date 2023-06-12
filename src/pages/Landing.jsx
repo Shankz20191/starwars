@@ -24,9 +24,13 @@ export const loader =
 
 const Landing = () => {
   const { id } = useLoaderData();
-  const { data } = useQuery(singleLandingQuery(id));
+  const { data, isFetching } = useQuery(singleLandingQuery(id));
 
-  return (
+  return isFetching ? (
+    <div className="loader-container">
+      <div className="loading"></div>
+    </div>
+  ) : (
     <section className="landing">
       {data?.results.map((film) => {
         const id = film.url;

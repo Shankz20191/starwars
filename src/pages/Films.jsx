@@ -28,9 +28,13 @@ export const loader =
 
 const Films = () => {
   const { id } = useLoaderData();
-  const { data } = useQuery(singleFilmQuery(id));
+  const { data, isFetching } = useQuery(singleFilmQuery(id));
 
-  return (
+  return isFetching ? (
+    <div className="loader-container">
+      <div className="loading"></div>
+    </div>
+  ) : (
     <section className="box">
       <div className="box-header">
         <h1>{data.title}</h1>
