@@ -11,16 +11,19 @@ const HomeLayout = () => {
   };
   return (
     <>
-      <nav>
-        <section>Star Wars Info</section>
-        <form onSubmit={handleSubmit}>
+      <nav className="nav-bar">
+        <section className="logo">StarWars Info</section>
+        <form onSubmit={handleSubmit} className="form">
           <input
             type="text"
             onChange={(e) => {
               setSearchQuery(e.target.value);
             }}
+            className="form-input"
           />
-          <button type="submit">Submit</button>
+          <button type="submit" className="btn">
+            Submit
+          </button>
         </form>
       </nav>
       <Outlet />

@@ -27,17 +27,22 @@ const Landing = () => {
   const { data } = useQuery(singleLandingQuery(id));
 
   return (
-    <section>
+    <section className="landing">
       {data?.results.map((film) => {
+        console.log(film);
         const id = film.url;
         return (
-          <Link
-            to={`/films/${id[id.length - 2]}`}
-            key={film.title}
-            style={{ display: "block" }}
-          >
-            {film.title}
-          </Link>
+          <div className="landing-box" key={film.title}>
+            <h3>{film.title}</h3>
+            <p>{film.director}</p>
+            <p>{film.release_date}</p>
+            <Link
+              to={`/films/${id[id.length - 2]}`}
+              style={{ display: "block" }}
+            >
+              <button className="btn">{film.title}</button>
+            </Link>
+          </div>
         );
       })}
     </section>
