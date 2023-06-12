@@ -30,33 +30,43 @@ const People = () => {
   const { id } = useLoaderData();
   const { data } = useQuery(singlePeopleQuery(id));
   return (
-    <section>
-      <h1>{data.name}</h1>
-      <div>
-        <h1>Films</h1>
-        {data.films.map((character) => {
-          return <FilmComponent key={character} url={character} />;
-        })}
+    <section className="box">
+      <div className="box-header">
+        <h1>{data.name}</h1>
       </div>
-      {data.species.length !== 0 ? (
-        <div>
-          <h1>Species</h1>
-          {data.species.map((character) => {
-            return <SpeciesComponent key={character} url={character} />;
+      <div className="box-container">
+        <h1>Films</h1>
+        <div className="box-container-container">
+          {data.films.map((character) => {
+            return <FilmComponent key={character} url={character} />;
           })}
         </div>
-      ) : null}
-      <div>
-        <h1>Starship</h1>
-        {data.starships.map((character) => {
-          return <StarshipsComponent key={character} url={character} />;
-        })}
       </div>
-      <div>
+      {data.species.length !== 0 ? (
+        <div className="box-container">
+          <h1>Species</h1>
+          <div className="box-container-container">
+            {data.species.map((character) => {
+              return <SpeciesComponent key={character} url={character} />;
+            })}
+          </div>
+        </div>
+      ) : null}
+      <div className="box-container">
+        <h1>Starship</h1>
+        <div className="box-container-container">
+          {data.starships.map((character) => {
+            return <StarshipsComponent key={character} url={character} />;
+          })}
+        </div>
+      </div>
+      <div className="box-container">
         <h1>Vehicles</h1>
-        {data.vehicles.map((character) => {
-          return <VehicleComponent key={character} url={character} />;
-        })}
+        <div className="box-container-container">
+          {data.vehicles.map((character) => {
+            return <VehicleComponent key={character} url={character} />;
+          })}
+        </div>
       </div>
     </section>
   );

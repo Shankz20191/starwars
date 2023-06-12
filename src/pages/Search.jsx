@@ -44,25 +44,35 @@ const Search = () => {
   console.log(peopleData, planetsData, starshipsData);
 
   return (
-    <section>
-      <h1>Search</h1>
-      <div>
+    <section className="box">
+      <div className="box-header">
+        <h1>Search</h1>
+      </div>
+      <div className="box-container">
         <h1>People</h1>
-        {peopleData?.results.map((person) => {
-          return <CharacterComponents key={person.name} url={person.url} />;
-        })}
+        <div className="box-container-container">
+          {peopleData?.results.map((person) => {
+            return <CharacterComponents key={person.name} url={person.url} />;
+          })}
+        </div>
       </div>
-      <div>
+      <div className="box-container">
         <h1>Planets</h1>
-        {planetsData?.results.map((planet) => {
-          return <PlanetsComponent key={planet.name} url={planet.url} />;
-        })}
+        <div className="box-container-container">
+          {planetsData?.results.map((planet) => {
+            return <PlanetsComponent key={planet.name} url={planet.url} />;
+          })}
+        </div>
       </div>
-      <div>
+      <div className="box-container">
         <h1>Starships</h1>
-        {starshipsData?.results.map((starship) => {
-          return <StarshipsComponent key={starship.name} url={starship.url} />;
-        })}
+        <div className="box-container-container">
+          {starshipsData?.results.map((starship) => {
+            return (
+              <StarshipsComponent key={starship.name} url={starship.url} />
+            );
+          })}
+        </div>
       </div>
     </section>
   );

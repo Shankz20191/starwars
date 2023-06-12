@@ -28,19 +28,25 @@ const Planet = () => {
   const { id } = useLoaderData();
   const { data } = useQuery(singlePlanetQuery(id));
   return (
-    <section>
-      <h1>{data.name}</h1>
-      <div>
-        <h1>Films</h1>
-        {data.films.map((character) => {
-          return <FilmComponent key={character} url={character} />;
-        })}
+    <section className="box">
+      <div className="box-header">
+        <h1>{data.name}</h1>
       </div>
-      <div>
+      <div className="box-container">
+        <h1>Films</h1>
+        <div className="box-container-container">
+          {data.films.map((character) => {
+            return <FilmComponent key={character} url={character} />;
+          })}
+        </div>
+      </div>
+      <div className="box-container">
         <h1>Residents</h1>
-        {data.residents.map((character) => {
-          return <CharacterComponents key={character} url={character} />;
-        })}
+        <div className="box-container-container">
+          {data.residents.map((character) => {
+            return <CharacterComponents key={character} url={character} />;
+          })}
+        </div>
       </div>
     </section>
   );

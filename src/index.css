@@ -140,40 +140,40 @@ p {
   align-items: center;
 }
 
-.films {
+.box {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.films-header {
+.box-header {
   width: 90vw;
   padding: 2rem;
 }
 
-.films-header h1,
+.box-header h1,
 h5,
 h6,
 p {
   margin-bottom: 1rem;
 }
 
-.films-header p {
+.box-header p {
   line-height: 1.5;
 }
 
-.films-characters {
+.box-container {
   width: 90vw;
   padding: 2rem;
   display: grid;
 }
 
-.films-characters h1 {
+.box-component h1 {
   margin-bottom: 2rem;
 }
 
-.films-characters-container {
+.box-container-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;

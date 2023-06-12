@@ -4,11 +4,9 @@ import { useFetchData } from "../utils";
 const CharacterComponents = ({ url }) => {
   const { data } = useFetchData(url);
 
-  console.log(data);
-
   const id = data?.url[data.url.length - 2];
   return (
-    <div className="films-character">
+    <div className="box-component">
       <h3>{data?.name}</h3>
       <p>{data?.gender}</p>
       <p>{data?.birth_year}</p>
