@@ -4,7 +4,6 @@ import { useFetchData } from "../utils";
 const VehicleComponent = ({ url }) => {
   const { data } = useFetchData(url);
   const id = data?.url[data.url.length - 2];
-  console.log(data);
   return (
     <div className="box-component">
       <h3>{data?.name}</h3>

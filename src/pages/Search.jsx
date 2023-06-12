@@ -41,8 +41,6 @@ const Search = () => {
     data: { peopleData, planetsData, starshipsData },
   } = useQuery(searchQuery(searchParam));
 
-  console.log(peopleData, planetsData, starshipsData);
-
   return (
     <section className="box">
       <div className="box-header">

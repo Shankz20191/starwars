@@ -19,7 +19,6 @@ const singleVehicleQuery = (id) => {
 export const loader =
   (queryClient) =>
   async ({ params }) => {
-    console.log("vehicle");
     const { id } = params;
     await queryClient.ensureQueryData(singleVehicleQuery(id));
     return { id };

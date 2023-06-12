@@ -29,7 +29,6 @@ export const loader =
 const Films = () => {
   const { id } = useLoaderData();
   const { data } = useQuery(singleFilmQuery(id));
-  console.log(data);
 
   return (
     <section className="box">

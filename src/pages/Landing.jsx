@@ -29,7 +29,6 @@ const Landing = () => {
   return (
     <section className="landing">
       {data?.results.map((film) => {
-        console.log(film);
         const id = film.url;
         return (
           <div className="landing-box" key={film.title}>
